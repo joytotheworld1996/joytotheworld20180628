@@ -1,0 +1,488 @@
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.css" />
+    <style>
+        * {
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Microsoft JhengHei", "Noto Sans TC", "PingFang TC", "Apple LiGothic Medium", Roboto, "Lucida Grande", "Lucida Sans Unicode", sans-serif;
+            background-color: #eeeeed;
+        }
+
+        a {
+            color: #2d2d2d;
+            text-decoration: none;
+            border-bottom: 1px solid #c71b0a;
+        }
+
+        header,
+        article>header {
+            max-width: calc(270/320*100%);
+            margin: 0 auto;
+        }
+
+        @media screen and (min-width: 768px) and (max-width: 1023px) {
+            header {
+                width: 678px;
+            }
+
+            article,
+            article>header {
+                max-width: 678px;
+                margin: 0 auto;
+            }
+        }
+
+        @media screen and (min-width: 1024px) {
+            header {
+                width: 900px;
+            }
+
+            article,
+            article>header {
+                max-width: 900px;
+                margin: 0 auto;
+            }
+        }
+
+        header>table {
+            width: 100%;
+            background-color: #eeeeed;
+        }
+
+        article>header>span {
+            font-size: 16px;
+            font-weight: bold;
+            line-height: 2.25;
+        }
+
+        article>header>h1 {
+            margin-top: 11px;
+            font-size: 34px;
+            font-weight: bold;
+            line-height: 1.32;
+        }
+
+        article {
+            color: #2d2d2d;
+        }
+
+        article>figure {
+            margin: 40px 0 0 0;
+        }
+
+        @media screen and (min-width: 768px) and (max-width: 1023px) {
+            article>figure {
+                width: 678px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .float-right {
+                float: left;
+                width: 300px;
+                margin-top: 40px;
+                margin-right: 40px;
+                margin-bottom: 50px;
+            }
+        }
+
+        @media screen and (min-width: 1024px) {
+            article>figure {
+                width: 900px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .float-right {
+                float: right;
+                width: 360px;
+                margin-top: 40px;
+                margin-left: 40px;
+                margin-bottom: 50px;
+            }
+        }
+
+        article>p,
+        article>h2,
+        article>blockquote,
+        article>ul,
+        article figcaption,
+        article>div,
+        article>header {
+            max-width: calc(270/320*100%);
+            margin: 0 auto;
+        }
+
+        @media screen and (min-width: 768px) and (max-width: 1023px) {
+            article>p,
+            article>h2,
+            article>blockquote,
+            article>ul,
+            article figcaption,
+            article>div,
+            article>header,
+            article>ul {
+                width: 550px;
+            }
+        }
+
+        @media screen and (min-width: 1024px) {
+            article>p,
+            article>h2,
+            article>blockquote,
+            article>ul,
+            article figcaption,
+            article>div,
+            article>header {
+                max-width: 756px;
+            }
+            article>ul {
+                width: 700px;
+            }
+        }
+
+        article>ul {
+            width: 100%;
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        article video,
+        article audio {
+            margin-top: 40px;
+            width: 100%;
+        }
+
+        article>p,
+        article>blockquote {
+            font-size: 18px;
+            line-height: 2.0;
+            letter-spacing: 0.9px;
+            margin-top: 40px;
+        }
+
+        article>blockquote {
+            padding-left: 21px;
+            color: #6d6d6d;
+            border-left: 1px solid #6d6d6d;
+        }
+
+        article>h2 {
+            font-size: 22px;
+            font-weight: bold;
+            letter-spacing: 1.1px;
+            line-height: 1.64;
+            margin-top: 40px;
+        }
+
+        article figcaption {
+            font-size: 16px;
+            line-height: 1.5;
+            letter-spacing: 0.8px;
+            color: #6d6d6d;
+            margin-top: 15px;
+        }
+
+        .header {
+            margin-top: 17px;
+            margin-bottom: 17px;
+            background-color:silver
+        }
+
+        .logo {
+            width: 100px;
+            height: 31px;
+        }
+
+        .menu {
+            width: 31px;
+            height: 31px;
+        }
+
+        .author {
+            margin-right: 30px;
+            font-size: 15px;
+            line-height: 2.25;
+        }
+
+        .introduction {
+            font-size: 22px;
+            line-height: 1.82;
+            letter-spacing: 1.6px;
+            text-align: justify;
+            margin-top: 30px;
+        }
+
+        .related-text {
+            font-size: 16px;
+            line-height: 2.25;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .related-items {
+            margin-bottom: 60px;
+        }
+
+        .related-item {
+            background-color: #e1e1e1;
+            margin-top: 20px;
+            padding: 20px;
+            cursor: pointer;
+        }
+
+        .related-item>img {
+            width: 20%;
+            vertical-align: middle;
+        }
+
+        .related-item>div {
+            display: inline-block;
+            width: 70%;
+            padding-left: 20px;
+            vertical-align: middle;
+            line-height: 1.5;
+        }
+
+        footer {
+            background-color: #bfbfbf;
+            min-height: 300px;
+        }
+
+        footer>table {
+            border-spacing: 45px;
+            width: 100%;
+        }
+
+        .footer-circle1 {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background-color: #397a69;
+            margin: 0 auto;
+        }
+
+        .footer-circle2 {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background-color: #cc8e24;
+            margin: 0 auto;
+        }
+
+        .footer-circle3 {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background-color: #781c20;
+            margin: 0 auto;
+        }
+
+        .footer-text {
+            margin-top: 15px;
+            font-size: 18px;
+            text-align: center;
+            color: #777;
+        }
+
+        .embed-box {
+            position: relative;
+            margin-top: 60px;
+        }
+
+        .embed-box>iframe {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+
+
+        @media screen and (max-width: 767px) {
+            table.hidden-on-mobile {
+                display: none;
+            }
+
+            table.shown-on-mobile {
+                display: table;
+            }
+        }
+
+        @media screen and (min-width: 768px) {
+            table.hidden-on-mobile {
+                display: table;
+                max-width: 770px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            table.shown-on-mobile {
+                display: none;
+            }
+        }
+
+        .flex-footer {
+            display: flex;
+            justify-content: space-between;
+        }
+    </style>
+
+</head>
+
+<body>
+    <header class="header">
+        <table>
+            <tbody>
+                <tr>
+                    <td>
+                        <div class="logo">
+                            <img src="logo7pupu.png" alt="logo7pupu" class="logo" />
+                        </div>
+                    </td>
+                    <td style="width:22px;">
+                        <div class="menu">
+                            <img src="bottom.png" alt="bottom7pupu" class="menu" />
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </header>
+    <div style="background-color:#00D2FF">
+        <article>
+            <header>
+                <h1 style="padding-top:40px">海洋安全知識不足　年輕衝浪手少</h1>
+            </header>
+            <div style="margin-bottom:15px">
+                <span class="author">
+                    <b>
+                        <a>記者陳詩妤 台東採訪報導</a>
+                    </b>
+                </span>
+            </div>
+
+            <div>
+                <img src="圖0.png" alt="封面圖" width="100%" />
+            </div>
+            <p>
+                「2016台灣國際衝浪公開賽」11月23至27日盛大舉辦，各地選手皆對台東浪頭表示驚艷。台灣擁有良好衝浪場地，然而選手並不多且年齡層偏高，缺乏海上運動安全知識是原因之一。
+            </p>
+            <div style="width:100%">
+                <div style="margin-top:40px">
+                    <img src="圖1.png" alt="圖片一" width="100%" />
+                </div>
+                <figcaption>11月27日決賽時天候不佳，儘管風雨交加，選手卻被高難度的浪逼出鬥志。圖／世界衝浪聯盟提供
+                </figcaption>
+            </div>
+            <p>
+                台東因天然資源優勢，是台灣唯一符合國際公開賽水平的衝浪場地。協辦單位、都蘭衝浪店老闆楊毓豪提到台東憑藉岩岸地形、東北季風，使浪型漂亮且浪的能量比其他地方好。世界衝浪聯盟（World Surf League,WSL）女子長板積分賽排名第一的選手瑞秋‧堤莉（Rachael
+                Tilly）興奮表示對金樽浪頭的喜愛；她也提到決賽當天的風雨，使衝浪更具難度，選手需以更高的警覺性操控浪板。
+            </p>
+            <div style="margin-top:40px">
+                <img src="圖2.png" alt="圖片二" width="100%" />
+                <figcaption>翁尼‧安瓦在浪頭秀出兩圈精彩的空翻，在本次公開賽奪得WSL男子短板冠軍。圖／世界衝浪聯盟提供</figcaption>
+            </div>
+            <p>
+                相對於國外大學生選手在衝浪比賽中的競爭力，台灣職業玩家普遍大學後才接觸這項運動。談及台灣選手年齡層較高，堤莉認為推廣海上運動的安全知識很重要。她以故鄉加州為例，當地孩童從小被帶領接觸海洋，因此玩衝浪的人也多。她指出台灣應普及海洋安全知識，「讓人知道即使年紀小也可以享受海洋。」玩家、國立政治大學石佳欣表示，她大二開始衝浪時，遭父母以危險為由反對。但當他們瞭解更多相關知識後，便放下偏見進而接受。</p>
+            <p>來自峇里島的翁尼‧安瓦（Oney Anwar）衝上浪巔，以華麗720度空翻奪得本次男子短板賽冠軍。對於台灣有優良場地卻缺乏年輕玩家的現狀，安瓦建議政府舉辦更多比賽，刺激選手投入衝浪。
+            </p>
+            <div style="width:100%">
+                <div style="margin-top:40px">
+                    <img src="圖3.png" alt="圖片三" width="100%" />
+                </div>
+                <figcaption>頒獎典禮上，台東縣縣長黃健庭（前排戴眼鏡者）親自來頒獎並鼓勵選手保持佳績。圖／世界衝浪聯盟提供
+                </figcaption>
+            </div>
+            <p>本次比賽主辦單位、台東縣政府近五年來積極舉行國際賽，除了活化冬季遊客量，也向一般民眾推廣衝浪。賽事承辦人洪婕雅表示，國際公開賽現場會辦公益教學，因為衝浪對一般遊客而言仍有距離。透過主持人解釋賽中選手的表現及比賽規則，普通觀眾也更能了解這項運動。</p>
+            <p> 對於台灣選手年齡層較高的事實，洪婕雅以日本為例，認為家長的態度是重要的原因。「衝浪運動在日本的地位就像職棒在台灣，」她提到孩子衝浪的興趣在日本能被家長接受且重視，進而有更多機會被培養成選手。</p>
+
+            <div style="width:100%">
+                <div style="margin-top:40px">
+                    <img src="圖4.png" alt="圖片四" width="100%" />
+                </div>
+                <figcaption>台東縣政府舉辦台灣國際衝浪公開賽至今已第五年，期待將台東浪點推至世界舞台。圖／世界衝浪聯盟提供
+                </figcaption>
+
+                <div style="margin-top:40px">
+                    <img src="圖5.png" alt="圖片五" width="100%" />
+                </div>
+                <figcaption>台灣三大衝浪勝地。資料整理／陳詩妤　製圖／李奇芸
+                </figcaption>
+            </div>
+            <p> 另外除了台東，宜蘭與墾丁也是國內衝浪寶地。每年七月的「宜蘭國際衝浪大賽」和十月的「屏東衝浪嘉年華」，是僅次於本場公開賽的國際大型賽事。宜蘭烏石港因雪山隧道開通的緣故，交通十分方便，假日往往聚集許多衝浪玩家；然而也導致遊客易互相搶浪的問題。而屏東佳樂水的冬季水溫多超過20度，畏寒的選手也能享受衝浪。
+
+            </p>
+
+
+            <div class="related-text" style="clear:both;margin-top:40px;margin-bottom:20px;">其他作品</div>
+
+            <ul class="related-items" style="padding-bottom:40px">
+                <li class="related-item" href="https://goo.gl/3WcHHP"> 
+                    <img src="實驗教育.png"></img>
+                    <div>下一場教育大革命？公辦公營實驗教育轉型之路</div>
+                </li>
+                <li class="related-item">
+                    <img src="不分系.png"></img>
+                    <div>分久必合？與時俱進的不分系制度</div>
+                </li>
+            </ul>
+
+        </article>
+    </div>
+    <footer style="background-color:#eeeeed">
+        <table class="shown-on-mobile">
+            <tbody>
+                <tr>
+                    <td>
+                        <div class="footer-circle1"></div>
+                        <div class="footer-text">關於我們</div>
+                    </td>
+                    <td>
+                        <div class="footer-circle2"></div>
+                        <div class="footer-text">聯絡我們</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="footer-circle3"></div>
+                        <div class="footer-text">多媒體專題</div>
+                    </td>
+                    <td>
+                        <div class="footer-circle1"></div>
+                        <div class="footer-text">個人作品</div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="hidden-on-mobile">
+            <tbody>
+                <tr>
+                    <td>
+                        <div class="footer-circle1"></div>
+                        <div class="footer-text">關於我們</div>
+                    </td>
+                    <td>
+                        <div class="footer-circle2"></div>
+                        <div class="footer-text">聯絡我們</div>
+                    </td>
+                    <td>
+                        <div class="footer-circle3"></div>
+                        <div class="footer-text">多媒體專題</div>
+                    </td>
+                    <td>
+                        <div class="footer-circle1"></div>
+                        <div class="footer-text">個人作品</div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </footer>
+</body>
+
+</html>
